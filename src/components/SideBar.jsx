@@ -25,7 +25,7 @@ export default function SideBar() {
         </li>
         <li>
           <a
-            className="flex items-center space-x-2 px-5 py-3.5 rounded-lg text-black"
+            className="flex items-center space-x-2 px-5 py-3.5 rounded-lg"
             href="#"
           >
             <img
@@ -39,7 +39,7 @@ export default function SideBar() {
         </li>
         <li>
           <a
-            className="flex items-center space-x-2 px-5 py-3.5 rounded-lg text-black"
+            className="flex items-center space-x-2 px-5 py-3.5 rounded-lg"
             href="#"
           >
             <img
@@ -53,7 +53,7 @@ export default function SideBar() {
         </li>
         <li>
           <a
-            className="flex items-center space-x-2 px-5 py-3.5 rounded-lg text-black"
+            className="flex items-center space-x-2 px-5 py-3.5 rounded-lg"
             href="#"
           >
             <img
@@ -67,7 +67,7 @@ export default function SideBar() {
         </li>
         <li>
           <a
-            className="flex items-center space-x-2 px-5 py-3.5 rounded-lg text-black"
+            className="flex items-center space-x-2 px-5 py-3.5 rounded-lg"
             href="#"
           >
             <img
