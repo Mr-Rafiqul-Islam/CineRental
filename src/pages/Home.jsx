@@ -2,7 +2,7 @@ import React from "react";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import SideBar from "../components/SideBar";
-import MovieList from "../components/movie/MovieList";
+import MovieList from "../components/cine/MovieList";
 
 export default function Home() {
   return (
