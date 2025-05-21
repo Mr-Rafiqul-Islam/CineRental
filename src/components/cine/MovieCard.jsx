@@ -1,5 +1,5 @@
 import React from "react";
-import { getImgUrl } from "../../utils/cine-utils";mO
+import { getImgUrl } from "../../utils/cine-utils";
 import Rating from "./Rating";
 
 export default function MovieCard({movie}) {
