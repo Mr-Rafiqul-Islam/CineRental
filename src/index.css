@@ -1,15 +1,5 @@
-@import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-@theme {
-  --color-primary: '#00D991';
-  --color-dark: "#171923";
-  --color-light: "#fff";
-  --color-body: "#1D1E28";
-}
 
-@layer utilities {
-  .container {
-    @apply mx-auto px-4;
-  }
-  
-}
