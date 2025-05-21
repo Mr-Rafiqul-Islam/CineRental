@@ -1,6 +1,7 @@
 import React from "react";
 import { getImgUrl } from "../../utils/cine-utils";
 import Rating from "./Rating";
+import tag from '../../assets/tag.svg'
 
 export default function MovieCard({movie}) {
   return (
@@ -16,7 +17,7 @@ export default function MovieCard({movie}) {
           className="bg-primary rounded-lg py-2 px-5 flex items-center justify-center gap-2 text-[#171923] font-semibold text-sm"
           href="#"
         >
-          <img src="./assets/tag.svg" alt="" />
+          <img src={tag} alt="tag" />
           <span>$100 | Add to Cart</span>
         </a>
       </figcaption>
