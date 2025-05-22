@@ -31,7 +31,7 @@ export default function MovieCard({ movie }) {
   return (
     <>
       {isShowModal && (
-        <MovieDetailsModal movie={selectedMovie} onclose={handleCloseModal} />
+        <MovieDetailsModal movie={selectedMovie} onCartAdd={handleAddToCart} onclose={handleCloseModal} />
       )}
       <figure
         className="p-4 border border-black/10 shadow-sm dark:border-white/10 rounded-xl"
