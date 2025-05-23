@@ -4,22 +4,31 @@ import Checkout from "../../assets/icons/checkout.svg";
 import { MovieContext } from "../../context";
 import { getImgUrl } from "../../utils/cine-utils";
 export default function CartDetails({ onclose }) {
-  const { cartData, setCartData } = useContext(MovieContext);
-
+  const { state, dispatch } = useContext(MovieContext);
+  const cartData = state.cartData;
   const handleRemove = (movieId) => {
-    const afterRemoveData = cartData.filter((item) => item.id !== movieId);
-    setCartData(afterRemoveData);
+    dispatch({
+      type: "REMOVE_FROM_CART",
+      payload: {
+        id: movieId,
+      },
+    });
   };
   return (
     <div className="fixed top-0 left-0 w-screen h-screen z-50 bg-black/60 backdrop-blur-sm">
       <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-[420px] sm:max-w-[600px] lg:max-w-[790px] p-4 max-h-[90vh] overflow-auto">
         <div className="bg-white shadow-md dark:bg-[#12141D] rounded-2xl overflow-hidden p-5 md:p-9">
-          <h2 className="text-2xl lg:text-[30px] mb-10 font-bold">Your Carts</h2>
+          <h2 className="text-2xl lg:text-[30px] mb-10 font-bold">
+            Your Carts
+          </h2>
           <div className="space-y-8 lg:space-y-12 max-h-[450px] overflow-auto mb-10 lg:mb-14">
             {cartData?.length > 0 ? (
               <>
                 {cartData.map((movie) => (
-                  <div className="grid grid-cols-[1fr_auto] gap-4" key={movie.id}>
+                  <div
+                    className="grid grid-cols-[1fr_auto] gap-4"
+                    key={movie.id}
+                  >
                     <div className="flex items-center gap-4">
                       <img
                         className="rounded overflow-hidden"

@@ -9,7 +9,8 @@ import { MovieContext, ThemeContext } from "../context";
 
 export default function Header() {
   const [cartModal, setCartModal] = useState(false);
-  const { cartData } = useContext(MovieContext);
+  const { state } = useContext(MovieContext);
+  const cartData = state.cartData
   const { darkMode, setDarkMode } = useContext(ThemeContext);
   return (
     <header>

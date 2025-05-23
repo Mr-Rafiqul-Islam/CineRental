@@ -9,14 +9,22 @@ export default function MovieCard({ movie }) {
   const [isShowModal, setIsShowModal] = useState(false);
   const [selectedMovie, setSelectedMovie] = useState(null);
 
-  const { cartData, setCartData } = useContext(MovieContext);
+  const { state, dispatch } = useContext(MovieContext);
+  const cartData = state.cartData;
   const handleAddToCart = (e, movie) => {
     e.stopPropagation();
     const found = cartData.find((item) => item.id === movie.id);
     if (!found) {
-      setCartData([...cartData, movie]);
-    }else{
-      console.error(`The Movie ${movie.title} has been added to the cart already.! `)
+      dispatch({
+        type: "ADD_TO_CART",
+        payload: {
+          ...movie
+        },
+      });
+    } else {
+      console.error(
+        `The Movie ${movie.title} has been added to the cart already.! `
+      );
     }
   };
   const handleCloseModal = () => {
@@ -31,7 +39,11 @@ export default function MovieCard({ movie }) {
   return (
     <>
       {isShowModal && (
-        <MovieDetailsModal movie={selectedMovie} onCartAdd={handleAddToCart} onclose={handleCloseModal} />
+        <MovieDetailsModal
+          movie={selectedMovie}
+          onCartAdd={handleAddToCart}
+          onclose={handleCloseModal}
+        />
       )}
       <figure
         className="p-4 border border-black/10 shadow-sm dark:border-white/10 rounded-xl"
